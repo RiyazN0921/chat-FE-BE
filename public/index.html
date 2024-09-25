@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat Application</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div id="authContainer">
+    <div id="signupForm" class="authForm">
+      <h2>Signup</h2>
+      <input type="password" id="signupEmail" placeholder="email" required>
+      <input type="text" id="signupUsername" placeholder="Username" required>
+      <input type="password" id="signupPassword" placeholder="Password" required>
+      <button id="signupBtn">Signup</button>
+    </div>
+
+    <div id="loginForm" class="authForm">
+      <h2>Login</h2>
+      <input type="text" id="loginEmail" placeholder="email" required>
+      <input type="password" id="loginPassword" placeholder="Password" required>
+      <button id="loginBtn">Login</button>
+    </div>
+  </div>
+
+  <div id="chatContainer" style="display:none;">
+    <div id="header">
+      <h2>Chat App</h2>
+      <button id="logoutBtn">Logout</button>
+    </div>
+    <div id="chatMessages"></div>
+    <form id="chatForm">
+      <input type="text" id="message" placeholder="Type a message..." required>
+      <button id="sendBtn" type="submit">Send</button>
+    </form>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="./main.js"></script>
+</body>
+</html>
