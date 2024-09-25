@@ -26,14 +26,12 @@ io.on('connection', (socket) => {
   console.log('A user connected')
 
   socket.on('chatMessage', async ({ senderId, receiverId, message }) => {
-    // Save message to DB
     const newMessage = await chatService.sendMessage(
       senderId,
       receiverId,
       message,
     )
 
-    // Emit message to the receiver
     io.emit('chatMessage', newMessage)
   })
 
